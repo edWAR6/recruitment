@@ -26,5 +26,9 @@
   "homepage": "https://github.com/hangarcr/recruitment#readme",
   "dependencies": {
     "json-server": "^0.7.27"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }
