@@ -1,25 +1,29 @@
 <div id="login">
 	<h2>LOGIN</h2>
-	<input class="form-control" type="email" name="email" placeholder="Email">
-	<input class="form-control" type="password" name="password" placeholder="Password">
-	<div class="row">
-		<div class="col-xs-6">
-			<label class="checkbox-inline">
-				<input type="checkbox" name="rememberme" value="rememberme"> <span class="rememberme">Remember Me</span>
-			</label>
+	<form ng-submit="login.authenticate()">
+		<input class="form-control" type="email" name="email" placeholder="Email" ng-model="login.user.email">
+		<input class="form-control" type="password" name="password" placeholder="Password" ng-model="login.user.password">
+		<div class="row">
+			<div class="col-xs-6">
+				<label class="checkbox-inline">
+					<input type="checkbox" name="rememberme" value="rememberme" ng-model="login.user.rememberme">
+					<span class="rememberme">Remember Me</span>
+				</label>
+			</div>
+			<div class="col-xs-6">
+				<a href="#">Forgot Password?</a>
+			</div>
 		</div>
-		<div class="col-xs-6">
-			<a href="#">Forgot Password?</a>
-		</div>
-	</div>
-	<a class="btn login btn-lg btn-primary" href="#" role="button">LOGIN</a>
+		<input type="submit" class="btn login btn-lg btn-primary" id="submit" value="LOGIN" />
+	</form>
 	<p>Or sign in with a social account</p>
 	<div class="social">
-		<a class="btn btn-lg btn-social-icon btn-twitter">
+		<a class="btn btn-lg btn-social-icon btn-twitter" ng-click="login.authenticateExternalProvider('Twitter')">
 			<span class="fa fa-twitter"></span>
 		</a>
-		<a class="btn btn-lg btn-social-icon btn-facebook">
+		<a class="btn btn-lg btn-social-icon btn-facebook" ng-click="login.authenticateExternalProvider('Facebook')">
 			<span class="fa fa-facebook"></span>
 		</a>
 	</div>
+	<span us-spinner spinner-on="login.showSpinner"></span>
 </div>

@@ -1,16 +1,18 @@
-angular.module('oclock', ['ngRoute'])
+angular.module('oclock', ['ngRoute', 'LocalStorageModule', 'angularSpinner', 'oclock.controllers', 'oclock.factories'])
 
-.config(function($routeProvider) {
+.config(function($httpProvider, $routeProvider) {
+  $httpProvider.interceptors.push('authInterceptorService');
+
 	$routeProvider
     .when('/', {
       controller:'LoginController as login',
       templateUrl:'views/login.html'
     })
-    .when('/edit/:projectId', {
+    .when('/list', {
       controller:'ListController as list',
       templateUrl:'views/list.html'
     })
-    .when('/new', {
+    .when('/current/:songId', {
       controller:'CurrentController as current',
       templateUrl:'views/current.html'
     })
@@ -19,14 +21,3 @@ angular.module('oclock', ['ngRoute'])
     });
 })
 
-.controller('LoginController', function() {
-
-})
-
-.controller('ListController', function() {
-
-})
-
-.controller('CurrentController', function() {
-
-})

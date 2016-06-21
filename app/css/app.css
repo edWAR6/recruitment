@@ -1,6 +1,11 @@
+html{
+	position: relative;
+    min-height: 100%
+}
 
 body{
 	background-color: #1f2225;
+	margin-bottom: 120px;
 }
 
 h1, h2, p, span{
@@ -66,7 +71,6 @@ header h1{
 	vertical-align: top;
 }
 
-
 #login{
 	max-width: 333px;
 	margin-left: auto;
@@ -97,11 +101,11 @@ header h1{
 
 #login input[type="email"],
 #login input[type="password"],
-#login a.btn{
+#login input.btn{
 	margin: 20px 0;
 }
 
-#login a.btn.login{
+#login input.btn.login{
 	background-color: #036280;
 	border-radius: 23px;
 	width: 100%;
@@ -124,18 +128,80 @@ header h1{
 
 
 
+#songs{
+	max-width: 440px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+}
+
+.search input{
+	width: 100%;
+	background-color: #036280;
+	color: #909aa2;
+	border-radius: 16px;
+	border-color: #036280;
+}
+
+.search i{
+	color: #909aa2;
+}
+
+.songs li.list-group-item{
+	border-radius: 0;
+	border-color: #1f2225;
+	background: #636567;
+	padding: 10px;
+	display: table;
+	width: 100%;
+}
+.songs li.list-group-item:nth-child(odd){
+	background: #8f9192;
+}
+
+.songs a{
+	vertical-align: middle;
+    display: table-cell;
+    width: 48px;
+}
+.songs i.glyphicon{
+	font-size: xx-large;
+    border: white 1px solid;
+    border-radius: 4px;
+    padding: 7px;
+    color: white;
+}
+.songs .info{
+	display: inline-block;
+	vertical-align: middle;
+	display: table-cell;
+}
+.songs .info h4,
+.songs .info p{
+	margin-left: 5px;
+}
+
+.songs .btn-group{
+	display: table-cell;
+	width: 130px;
+}
+.songs .btn-default{
+	color: #333;
+	background-color: black;
+	border-color: black;
+}
+.songs .btn-default:active,
+.songs .btn-default:focus{
+	color: black;
+	background-color: #caa92b;
+}
 
 
-
-
-
-
-
-
-
-
-footer{
-	min-height: 110px;
+footer.footer{
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	height: 110px;
 	background-color: #000;
 	color: #fff;
 }
@@ -165,6 +231,9 @@ footer a{
 	.logo{
 		margin-right: 40px;
 	}
+	/*.songs .info{
+		width: 222px;
+	}*/
 }
 
 /* Medium Devices, Desktops */
